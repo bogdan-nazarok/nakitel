@@ -3,7 +3,7 @@ class Catalog
 {
   public $fileNamesURL; // Путь к файлу с именами
   public $dirCatalogURL; // Путь к каталогу с файлами
-  public $percent; // Число процента которого будем сравневать
+  public $percent; // Число процента которого будем сравнивать
 
   // Метод формирования массива каталога с файлами
   public function getDirContents($dir, &$results = array())
@@ -33,7 +33,7 @@ class Catalog
     return $results;
   }
   
-  // Метод фильтрации и формирования массива сравнивая имен
+  // Метод фильтрации и формирования массива сравнивая имена
   public function getFilterNames()
   {
     // Получаем массив списка имен из файла
@@ -79,9 +79,10 @@ class Catalog
 $catalog = new Catalog();
 $catalog->fileNamesURL = 'main_list_name.txt'; // Путь к файлу с именами
 $catalog->dirCatalogURL = 'main_dir'; // Путь к каталогу с файлами
-$catalog->percent = '90'; // Т.к. в задаче стоит найти имена которые отличаются от списка на 10% и более, то мы будем смотреть на схожество 90% и менее
+$catalog->percent = '90'; // Т.к. в задаче стоит найти имена, которые отличаются от списка на 10% и более, то мы будем смотреть на сходства 90% и менее
 $arResult = $catalog->getFilterNames();
 ?>
+
 <?if (count($arResult)>0):?>
 	<table cellpadding="10" cellspacing="0" border="1">
 		<thead>
